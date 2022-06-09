@@ -1,0 +1,7 @@
+.preview-wrapper {
+  padding: 2rem;
+}
+
+.preview-wrapper .preview-sidebar {
+  max-width: 26em;
+}

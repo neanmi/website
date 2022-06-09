@@ -1,0 +1,43 @@
+# for local development
+local_backend: true
+site_url: http://localhost:8080
+
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: /uploads
+public_folder: /uploads
+locale: en
+# publish_mode: editorial_workflow
+
+collections:
+  - name: global-config
+    label: Global configuration
+    extension: json
+    create: false
+    delete: false
+    slug: "{{slug}}"
+    files:
+      - name: config-index
+        label: Home page
+        file: src/_data/config/index.json
+        fields:
+          - name: title
+            label: Title
+            widget: string
+          - name: body
+            label: Content
+            widget: markdown
+
+      - name: config-errors
+        label: Errors
+        file: src/_data/config/errors.json
+        fields:
+          - label: 404 Error
+            name: http_404
+            widget: object
+            fields:
+              - label: Header text
+                name: header
+                widget: markdown
