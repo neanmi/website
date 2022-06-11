@@ -1,6 +1,6 @@
 # for local development
-local_backend: true
-site_url: http://localhost:8080
+# local_backend: true
+# site_url: http://localhost:8080
 
 backend:
   name: git-gateway
@@ -19,16 +19,66 @@ collections:
     delete: false
     slug: "{{slug}}"
     files:
-      - name: config-index
-        label: Home page
-        file: src/_data/config/index.json
+      - name: config-global
+        label: Global
+        file: src/_data/config/global.json
         fields:
-          - name: title
-            label: Title
+          - label: Company Name
+            name: company
             widget: string
-          - name: body
-            label: Content
-            widget: markdown
+          - label: Company Subtitle
+            name: companySub
+            widget: string
+          - label: Company Slogan
+            name: slogan
+            widget: string
+
+      - name: config-features
+        label: Features
+        file: src/_data/config/features.json
+        fields:
+          - label: Header
+            name: header
+            widget: string
+          - label: Subheader
+            name: subheader
+            widget: string
+
+      - name: config-contact
+        label: Contact
+        file: src/_data/config/contact.json
+        fields:
+          - label: Header
+            name: header
+            widget: string
+          - label: Subheader
+            name: subheader
+            widget: string
+          - label: Address
+            name: address
+            widget: string
+          - label: Telephone
+            name: telephone
+            widget: string
+          - label: Email
+            name: email
+            widget: string
+          - label: Twitter
+            name: twitter
+            widget: string
+          - label: Success
+            name: success
+            widget: object
+            fields:
+              - label: Header
+                name: header
+                widget: string
+              - label: Message
+                name: message
+                widget: string
+              - label: Return button text
+                name: button
+                widget: string
 
       - name: config-errors
         label: Errors
@@ -40,4 +90,64 @@ collections:
             fields:
               - label: Header text
                 name: header
-                widget: markdown
+                widget: string
+              - label: Description
+                name: description
+                widget: string
+              - label: Return button text
+                name: button
+                widget: string
+
+  - name: services
+    label: Services
+    label_singular: Service
+    folder: src/service
+    create: true
+    slug: "{{key}}"
+    summary: "{{fields.description}}"
+    fields:
+      - label: Key
+        name: key
+        widget: string
+        required: true
+      - label: Title
+        name: title
+        widget: string
+        required: true
+      - label: Description
+        name: description
+        widget: string
+        required: true
+      - label: Image
+        name: image
+        widget: image
+        required: true
+      - label: Icon
+        name: icon
+        widget: string
+        required: true
+
+  - name: features
+    label: Features
+    label_singular: Feature
+    folder: src/feature
+    create: true
+    slug: "{{key}}"
+    summary: "{{fields.description}}"
+    fields:
+      - label: Key
+        name: key
+        widget: string
+        required: true
+      - label: Title
+        name: title
+        widget: string
+        required: true
+      - label: Description
+        name: description
+        widget: string
+        required: true
+      - label: Image
+        name: image
+        widget: image
+        required: true

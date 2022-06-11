@@ -4,8 +4,12 @@ layout: "layout/base.njk"
 
 <header>
   <div class="inner">
-    <h2>{{ config.global.company }}</h2>
-    <p>{{ config.global.companySub }}</p>
+    <h2 class="logo flex">
+      <img src="/uploads/logo.svg" width="75" alt="">
+      {{ config.global.company }}
+      <small>{{ config.global.companySub }}</small>
+    </h2>
+    <p>{{ config.global.slogan }}</p>
   </div>
 </header>
 

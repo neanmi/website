@@ -18,6 +18,9 @@
 			.logo {
 				@include vendor('transform', 'none');
 				opacity: 1;
+        display: flex;
+        column-gap: 0.3rem;
+        align-items: center;
 			}
 
 			h2 {
