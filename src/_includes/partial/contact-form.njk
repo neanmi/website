@@ -1,0 +1,28 @@
+<h2 class="major">
+  {{ config.contact.header }}
+</h2>
+<p>{{ config.contact.subheader }}</p>
+
+<form name="contact" method="post" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" action="/contact/success">
+  <div class="fields">
+    <div class="field">
+      <label for="name">Name</label>
+      <input required type="text" name="name" id="name"/>
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input required type="email" name="email" id="email"/>
+    </div>
+    <div class="field">
+      <label for="message">Message</label>
+      <textarea required name="message" id="message" rows="4"></textarea>
+    </div>
+    <div class="field">
+      <label for="recaptcha">Verification</label>
+      <div data-netlify-recaptcha="true"></div>
+    </div>
+  </div>
+  <ul class="actions">
+    <li><input type="submit" value="Send Message"/></li>
+  </ul>
+</form>

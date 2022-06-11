@@ -29,9 +29,28 @@
     <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body class="is-preload">
-    <div id="wrapper">
-      <div id="page-wrapper">
+    <div id="page-wrapper">
+
+      {# {% include 'partial/menu.njk' %} #}
+      <section id="wrapper">
         {{ content | safe }}
-        {% include 'scripts.njk' %}
-      </body>
-    </html>
+      </section>
+
+      <section id="footer">
+        <div class="inner">
+
+          {% include 'partial/contact-form.njk' %}
+          {% include 'partial/contact-details.njk' %}
+
+          <ul class="copyright">
+            <li>&copy; Untitled Inc. All rights reserved.</li>
+            <li>Design: <a href="http://html5up.net">HTML5 UP</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    {% include 'layout/scripts.njk' %}
+  </body>
+</html>

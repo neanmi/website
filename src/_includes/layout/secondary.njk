@@ -1,0 +1,12 @@
+---
+layout: "layout/base.njk"
+---
+
+<header>
+  <div class="inner">
+    <h2>{{ config.global.company }}</h2>
+    <p>{{ config.global.companySub }}</p>
+  </div>
+</header>
+
+{{ content | safe }}

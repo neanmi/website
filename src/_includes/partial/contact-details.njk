@@ -1,0 +1,30 @@
+<ul class="contact">
+  <li class="icon solid fa-home">
+    {{ config.contact.address | safe }}
+  </li>
+  <li class="icon solid fa-phone">
+    <a href="tel:{{ config.contact.telephone }}">
+      {{ config.contact.telephone }}
+    </a>
+  </li>
+  <li class="icon solid fa-envelope">
+    <a href="mailto:{{ config.contact.email }}">
+      {{ config.contact.email }}
+    </a>
+  </li>
+  <li class="icon brands fa-twitter">
+    <a href="https://twitter.com/{{ config.contact.twitter }}">
+      {{ config.contact.twitter }}
+    </a>
+  </li>
+  {# <li class="icon brands fa-facebook-f">
+    <a href="https://facebook.com/{{ config.contact.facebook }}">
+      {{ config.contact.facebook }}
+    </a>
+  </li>
+  <li class="icon brands fa-instagram">
+    <a href="https://instagram.com/{{ config.contact.instagram }}">
+      {{ config.contact.instagram }}
+    </a>
+  </li> #}
+</ul>
