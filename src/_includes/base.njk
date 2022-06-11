@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
     <!-- Primary Meta Tags -->
     <title>{{ title }}</title>
     <meta name="title" content="{{ title }}">
@@ -24,13 +24,14 @@
     <meta property="twitter:description" content="{{ meta.siteDescription }}">
     <meta property="twitter:image" content="{{ meta.siteImage }}">
 
-    <link rel="stylesheet" href="/assets/css/main{% devEnv '', '.min' %}.css" />
-    <script defer src="https://unpkg.com/netlify-identity-widget"></script>
+    <link rel="stylesheet" href="/assets/css/main{% devEnv '', '.min' %}.css"/>
+    <noscript><link rel="stylesheet" href="/assets/css/noscript{% devEnv '', '.min' %}.css"/></noscript>
+    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body class="is-preload">
-<div id="wrapper">
-  <div id="main">
-    {{ content | safe }}
-    {% include 'scripts.njk' %}
-  </body>
-</html>
+    <div id="wrapper">
+      <div id="page-wrapper">
+        {{ content | safe }}
+        {% include 'scripts.njk' %}
+      </body>
+    </html>

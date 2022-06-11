@@ -1,3 +1,6 @@
 !*.js
 *.min.js
 !.gitignore
+!breakpoints.min.js
+!browser.min.js
+!jquery.scrollex.min.js

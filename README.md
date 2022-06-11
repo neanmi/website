@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/222f965c-0bcc-4cde-89fd-5742f88a5605/deploy-status)](https://app.netlify.com/sites/neanmi/deploys)
+
 # Eleventy + Netlify CMS project template
 
 ## Structure

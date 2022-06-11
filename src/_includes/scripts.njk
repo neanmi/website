@@ -1,12 +1,23 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+<script src="/assets/js/jquery.scrollex.min.js"></script>
+<script src="/assets/js/browser.min.js"></script>
+<script src="/assets/js/breakpoints.min.js"></script>
+<script src="/assets/js/util{% devEnv '', '.min' %}.js"></script>
 <script src="/assets/js/main{% devEnv '', '.min' %}.js"></script>
 <script>
   if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", (user) => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
+    window
+      .netlifyIdentity
+      .on("init", (user) => {
+        if (!user) {
+          window
+            .netlifyIdentity
+            .on("login", () => {
+              document.location.href = "/admin/";
+            });
+        }
+      });
   }
 </script>
