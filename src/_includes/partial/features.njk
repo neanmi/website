@@ -1,0 +1,16 @@
+<section class="wrapper alt">
+  <div class="inner">
+    <h2 class="major">{{ config.features.header }}</h2>
+    <p>{{ config.features.subheader }}</p>
+    <section class="features">
+      {% for feature in collections.feature %}
+        {% include 'partial/feature.njk' %}
+      {% endfor %}
+    </section>
+    {# <ul class="actions">
+      <li>
+        <a href="#" class="button">Browse All</a>
+      </li>
+    </ul> #}
+  </div>
+</section>
