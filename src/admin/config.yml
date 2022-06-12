@@ -116,7 +116,7 @@ collections:
         required: true
       - label: Description
         name: description
-        widget: string
+        widget: markdown
         required: true
       - label: Image
         name: image
@@ -145,7 +145,7 @@ collections:
         required: true
       - label: Description
         name: description
-        widget: string
+        widget: markdown
         required: true
       - label: Image
         name: image
