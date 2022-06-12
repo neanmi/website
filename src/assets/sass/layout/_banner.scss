@@ -8,15 +8,30 @@
 
 .logo.flex {
   display: flex;
-  column-gap: 0.5rem;
+  column-gap: 0.7rem;
   align-items: center;
+
+  & > img {
+    grid-area: companyLogo;
+  }
+
+  & > span {
+    grid-area: companyName;
+  }
 
   & > small {
     font-size: 0.6em;
     align-self: flex-end;
+    grid-area: companySub;
   }
 
   @include breakpoint("<=small") {
+    display: grid;
+    grid-template-areas:
+      "companyLogo companyName"
+      "companyLogo companySub";
+    justify-content: start;
+
     & > img {
       width: 55px;
     }
