@@ -1,6 +1,6 @@
 <ul class="contact">
   <li class="icon solid fa-home">
-    {{ config.contact.address | safe }}
+    {% markdown %}{{ config.contact.address }}{% endmarkdown %}
   </li>
   <li class="icon solid fa-phone">
     <a target="_blank" rel="noopener noreferrer" href="tel:{{ config.contact.telephone }}">

@@ -48,24 +48,6 @@ collections:
         label: Contact
         file: src/_data/config/contact.json
         fields:
-          - label: Header
-            name: header
-            widget: string
-          - label: Subheader
-            name: subheader
-            widget: string
-          - label: Address
-            name: address
-            widget: string
-          - label: Telephone
-            name: telephone
-            widget: string
-          - label: Email
-            name: email
-            widget: string
-          - label: Twitter
-            name: twitter
-            widget: string
           - label: Success
             name: success
             widget: object
@@ -79,6 +61,24 @@ collections:
               - label: Return button text
                 name: button
                 widget: string
+          - label: Header
+            name: header
+            widget: string
+          - label: Subheader
+            name: subheader
+            widget: string
+          - label: Address
+            name: address
+            widget: markdown
+          - label: Telephone
+            name: telephone
+            widget: string
+          - label: Email
+            name: email
+            widget: string
+          - label: Twitter
+            name: twitter
+            widget: string
 
       - name: config-errors
         label: Errors
