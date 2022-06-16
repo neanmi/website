@@ -172,14 +172,14 @@
     }
 
     .image {
-      border-radius: 100%;
+      border-radius: 30%;
       margin: 0 _size(section-spacing, large) _size(element-margin) 0;
-      width: 10em;
+      width: 15em;
       overflow: hidden;
       -ms-flex: 1;
 
       img {
-        border-radius: 100%;
+        border-radius: 30%;
         width: 100%;
       }
     }
@@ -236,7 +236,7 @@
     &.spotlight {
       .image {
         margin: 0 _size(section-spacing, medium) _size(element-margin) 0;
-        width: 32em;
+        width: 12em;
       }
 
       &:nth-child(2n - 1) {
@@ -274,7 +274,7 @@
       }
 
       .image {
-        width: 19em;
+        width: 14em;
         margin: 0 _size(section-spacing, small) _size(element-margin) 0;
       }
 
