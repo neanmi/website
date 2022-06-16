@@ -1,12 +1,23 @@
-<section id="service-{{ service.data.key }}" class="wrapper spotlight style1">
+{% set style = (service_i % 3) + 1 %}
+{% set isAlt = service_i % 2 == 1 %}
+{% set alt = '' %}
+{% if isAlt %}
+  {% set alt = 'alt' %}
+{% endif %}
+<section id="service-{{ service.data.key }}" class="wrapper spotlight style{{ style }} {{ alt }}">
   <div class="inner">
     <div class="image">
       <img src="{{ service.data.image }}" alt=""/>
     </div>
     <div class="content">
       <h2 class="major">
+        {% if isAlt %}
+          <span class="icon {{ service.data.icon }}"></span>
+        {% endif %}
         {{ service.data.title }}
-        <span class="icon {{ service.data.icon }}"></span>
+        {% if isAlt === false %}
+          <span class="icon {{ service.data.icon }}"></span>
+        {% endif %}
       </h2>
       <p>{{ service.data.description }}</p>
       {# <a href="#" class="special">Learn more</a> #}

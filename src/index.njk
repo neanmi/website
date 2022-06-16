@@ -5,7 +5,8 @@ title: NEANMI Software Technologies
 {% include 'partial/hero.njk' %}
 
 <section id="wrapper">
-  {% for service in collections.service %}
+  {% for service in collections.service | ordered %}
+    {% set service_i = loop.index - 1 %}
     {% include 'partial/service.njk' %}
   {% endfor %}
 
