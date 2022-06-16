@@ -24,6 +24,7 @@
     <meta property="twitter:description" content="{{ meta.siteDescription }}">
     <meta property="twitter:image" content="{{ meta.siteImage }}">
 
+    <link rel="shortcut icon" href="/uploads/logo-white.svg" type="image/x-icon">
     <link rel="stylesheet" href="/assets/css/main{% devEnv '', '.min' %}.css"/>
     <noscript><link rel="stylesheet" href="/assets/css/noscript{% devEnv '', '.min' %}.css"/></noscript>
     <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
@@ -36,19 +37,7 @@
         {{ content | safe }}
       </section>
 
-      <section id="footer">
-        <div class="inner">
-
-          {% include 'partial/contact-form.njk' %}
-          {% include 'partial/contact-details.njk' %}
-
-          <ul class="copyright">
-            <li>&copy; Untitled Inc. All rights reserved.</li>
-            <li>Design: <a href="http://html5up.net">HTML5 UP</a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      {% include 'partial/footer.njk' %}
     </div>
 
     {% include 'layout/scripts.njk' %}

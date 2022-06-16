@@ -1,12 +1,14 @@
 <section id="banner">
   <div class="inner">
-    <div class="logo">
-      <img src="https://picsum.photos/seed/aaa/50" alt="">
-      {# <span class="icon fa-gem"></span> #}
-    </div>
-    <h2>{{ config.template.all.company.title }}</h2>
+    <h2 class="logo flex">
+      <img src="/uploads/logo-white.svg" width="75" alt="">
+      <span>{{ config.global.company }}</span>
+      <small>
+        {{ config.global.companySub }}
+      </small>
+    </h2>
     <p>
-      {{ config.template.all.company.slogan }}
+      {{ config.global.slogan }}
     </p>
   </div>
 </section>

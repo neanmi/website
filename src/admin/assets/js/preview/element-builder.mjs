@@ -3,3 +3,4 @@ export const elc = (tag, className, ...children) => h(tag, { className }, childr
 export const eli = (tag, id, ...children) => h(tag, { id }, children);
 export const wrap = (...content) => elc("div", "preview-wrapper", content);
 export const html = (__html) => ({ dangerouslySetInnerHTML: { __html } });
+export const asset = (props, asset) => props.getAsset(asset).toString();
