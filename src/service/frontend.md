@@ -1,11 +1,10 @@
 ---
 key: frontend
+order: 3
 title: Web applications
-description: Based on your requirements we can provide you multiple options for
-  site creation. From backend technologies like the ones described above to
-  relational (PostgreSQL and MySQL)  and non-relational databases (MongoDB and
-  Redis). We can also provide our expertise and advise on which technologies
-  suits better your needs.
+description: Regardless of whether you need a simple landing page, a single page
+  application or an interface for your backend, we provide guidance to ensure
+  you are choosing the right solution, as well as multiple ways to achieve it.
 image: https://picsum.photos/seed/a/300
-icon: solid fa-browser
+icon: solid fa-laptop-code
 ---

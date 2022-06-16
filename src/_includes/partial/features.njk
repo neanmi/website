@@ -1,4 +1,8 @@
-<section class="wrapper alt">
+{% set alt = '' %}
+{% if collections.service.length % 2 == 1 %}
+  {% set alt = 'alt' %}
+{% endif %}
+<section class="wrapper {{ alt }}">
   <div class="inner">
     <h2 class="major">{{ config.features.header }}</h2>
     <p>{{ config.features.subheader }}</p>

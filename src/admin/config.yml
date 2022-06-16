@@ -4,7 +4,7 @@
 
 backend:
   name: git-gateway
-  branch: main
+  branch: develop
 
 media_folder: /uploads
 public_folder: /uploads
@@ -104,11 +104,18 @@ collections:
     folder: src/service
     create: true
     slug: "{{key}}"
-    summary: "{{fields.description}}"
+    summary: "{{fields.title}}"
     fields:
       - label: Key
         name: key
         widget: string
+        required: true
+      - label: Order
+        name: order
+        widget: number
+        default: 1
+        value_type: int
+        min: 1
         required: true
       - label: Title
         name: title
@@ -133,7 +140,7 @@ collections:
     folder: src/feature
     create: true
     slug: "{{key}}"
-    summary: "{{fields.description}}"
+    summary: "{{fields.title}}"
     fields:
       - label: Key
         name: key
