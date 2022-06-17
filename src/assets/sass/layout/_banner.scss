@@ -40,7 +40,8 @@
 }
 
 #banner {
-  @include padding(10em, 0, (0, 0, _size(wrapper-edges, large) * -0.5, 0));
+  padding: 25vh 0 0 0;
+  height: 70vh;
 
   .inner {
     margin: 0 auto;
@@ -99,7 +100,7 @@
   }
 
   @include breakpoint("<=large") {
-    @include padding(7em, 0, (0, 0, _size(wrapper-edges, large) * 0.5, 0));
+    padding: 23vh 0 0 0;
 
     background-color: _palette(bg);
 
@@ -118,7 +119,7 @@
   }
 
   @include breakpoint("<=medium") {
-    @include padding(12em, 3em, (0, 0, _size(wrapper-edges, medium) * 0.5, 0));
+    padding: 24vh 3em 0 3em;
 
     margin-bottom: (_size(wrapper-edges, medium) * -1);
 
@@ -128,7 +129,8 @@
   }
 
   @include breakpoint("<=small") {
-    @include padding(5em, 2em, (0, 0, _size(wrapper-edges, small) * 0.5, 0));
+    padding: 16vh 3em 0 3em;
+    height: 45vh;
 
     margin-bottom: (_size(wrapper-edges, small) * -1);
 
