@@ -40,8 +40,8 @@
 }
 
 #banner {
-  padding: 25vh 0 0 0;
-  height: 70vh;
+  padding: 13em 0 0 0;
+  height: 35em;
 
   .inner {
     margin: 0 auto;
@@ -100,7 +100,7 @@
   }
 
   @include breakpoint("<=large") {
-    padding: 23vh 0 0 0;
+    padding: 11em 0 0 0;
 
     background-color: _palette(bg);
 
@@ -119,7 +119,7 @@
   }
 
   @include breakpoint("<=medium") {
-    padding: 24vh 3em 0 3em;
+    padding: 11em 3em 0 3em;
 
     margin-bottom: (_size(wrapper-edges, medium) * -1);
 
@@ -129,8 +129,8 @@
   }
 
   @include breakpoint("<=small") {
-    padding: 16vh 3em 0 3em;
-    height: 45vh;
+    padding: 11em 2em 0 2em;
+    height: 30em;
 
     margin-bottom: (_size(wrapper-edges, small) * -1);
 
@@ -145,6 +145,11 @@
     p {
       font-size: 0.8em;
     }
+  }
+
+  @include breakpoint("<=xsmall") {
+    padding: 12em 2em 0 2em;
+    height: 30em;
   }
 
   body.is-preload & {
