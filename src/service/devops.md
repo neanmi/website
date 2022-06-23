@@ -7,6 +7,6 @@ description: "We provide both support, as well as maintenance for your
   we support include, but are not limited to: Docker & Kubernetes, ArgoCD,
   Terraform, Ansible across different cloud providers: AWS, IBM Cloud, Google
   Cloud Platform, and Microsoft Azure."
-image: https://picsum.photos/seed/a/300
+image: /uploads/devops.avif
 icon: solid fa-gear
 ---

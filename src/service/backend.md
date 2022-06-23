@@ -6,6 +6,6 @@ description: "Custom-made solutions to your backend problems. Whether it is an
   API, a server, or a microservice, we can tailor a solution for your
   applications to communicate to your databases or any other services using a
   wide range of technologies, like: Java, NodeJS, TypeScript and Python."
-image: https://picsum.photos/seed/a/300
+image: /uploads/backend.jfif
 icon: solid fa-server
 ---
