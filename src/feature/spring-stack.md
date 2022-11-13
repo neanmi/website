@@ -1,7 +1,7 @@
 ---
-key: feature3
+key: spring-stack
 title: SPRING
 description: Powerful and customizable Java framework used for enterprise level
   applications.
-image: /uploads/og-spring.png
+image: /uploads/spring.webp
 ---
