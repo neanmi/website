@@ -23,3 +23,9 @@
 
 - auto compile and minify css and javascript
 - move meta data to cms
+
+## Development
+
+- `yarn install` to install all dependencies
+- uncomment lines 2 and 3 in `src\admin\config.yml` to enable local content management
+- `yarn start` to start the server
