@@ -7,7 +7,7 @@
     <h2 class="major">{{ config.features.header }}</h2>
     <p>{{ config.features.subheader }}</p>
     <section class="features">
-      {% for feature in collections.feature %}
+      {% for feature in collections.feature | ordered %}
         {% include 'partial/feature.njk' %}
       {% endfor %}
     </section>
