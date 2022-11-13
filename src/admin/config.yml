@@ -147,6 +147,11 @@ collections:
         name: key
         widget: string
         required: true
+      - label: Order
+        name: order
+        widget: number
+        required: true
+        default: -1
       - label: Title
         name: title
         widget: string
