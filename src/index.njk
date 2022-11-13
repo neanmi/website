@@ -2,7 +2,9 @@
 layout: "layout/base.njk"
 title: NEANMI Software Technologies
 ---
-{% include 'partial/hero.njk' %}
+<section id="banner">
+  {% include 'partial/hero.njk' %}
+</section>
 
 <section id="wrapper">
   {% for service in collections.service | ordered %}

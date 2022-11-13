@@ -3,14 +3,7 @@ layout: "layout/base.njk"
 ---
 
 <header>
-  <div class="inner">
-    <h2 class="logo flex">
-      <img src="/uploads/logo-white.svg" width="75" alt="">
-      <span>{{ config.global.company }}</span>
-      <small>{{ config.global.companySub }}</small>
-    </h2>
-    <p>{{ config.global.slogan }}</p>
-  </div>
+  {% include 'partial/hero.njk' %}
 </header>
 
 {{ content | safe }}
