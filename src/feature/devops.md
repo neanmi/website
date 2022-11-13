@@ -1,6 +1,7 @@
 ---
 key: feature1
-title: Feature 1
-description: Veniam laboris ex proident reprehenderit laboris occaecat sit aliquip cillum pariatur.
-image: https://picsum.photos/seed/b/300/180
+title: JAM
+description: "**JavaScript, APIs, and Markup** (JAM). Jam is a different
+  architecture for building apps and websites."
+image: /uploads/photo-1593720219276-0b1eacd0aef4.avif
 ---
