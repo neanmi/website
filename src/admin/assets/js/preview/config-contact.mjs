@@ -72,11 +72,27 @@ const contacts = (props, entry) => {
   return elc(
     "ul",
     "contact",
-    elc("li", "icon solid fa-home", props.widgetFor("address")),
-    elc("li", "icon solid fa-phone", el("a", entry.getIn(["data", "telephone"]))),
+    ifExists(props.widgetFor("address"), (address) =>
+      elc("li", "icon solid fa-home", address)
+    ),
+    ifExists(entry.getIn(["data", "telephone"]), (phone) =>
+      elc("li", "icon solid fa-phone", el("a", phone))
+    ),
     elc("li", "icon solid fa-envelope", el("a", entry.getIn(["data", "email"]))),
-    elc("li", "icon brands fa-twitter", el("a", entry.getIn(["data", "twitter"])))
+    ifExists(entry.getIn(["data", "twitter"]), (twitter) =>
+      elc("li", "icon brands fa-twitter", el("a", twitter))
+    ),
+    ifExists(entry.getIn(["data", "linkedin"]), (linkedin) =>
+      elc("li", "icon brands fa-linkedin", el("a", linkedin))
+    ),
+    ifExists(entry.getIn(["data", "instagram"]), (instagram) =>
+      elc("li", "icon brands fa-instagram", el("a", instagram))
+    )
   );
+};
+
+const ifExists = (data, fn) => {
+  return data ? fn(data) : null;
 };
 
 const captcha = () => {
