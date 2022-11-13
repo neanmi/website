@@ -7,21 +7,15 @@
 /* Features */
 
 .features {
-  @include vendor("display", "flex");
-  @include vendor("flex-wrap", "wrap");
+  @include vendor("display", "grid");
   margin: 0 0 _size(element-margin) 0;
+  gap: 2em;
+  grid-template-columns: repeat(3, 1fr);
 
   article {
     @include padding(1.75em, 1.75em);
     background-color: desaturate(lighten(_palette(bg), 3), 1.5);
     border-radius: _size(border-radius);
-    margin: (_size(section-spacing, large) * 0.5) _size(section-spacing, large)
-      (_size(section-spacing, large) * 0.5) 0;
-    width: calc(50% - #{_size(section-spacing, large) * 0.5});
-
-    &:nth-child(2n) {
-      margin-right: 0;
-    }
 
     .image {
       border-radius: _size(border-radius) _size(border-radius) 0 0;
@@ -40,19 +34,13 @@
   }
 
   @include breakpoint("<=medium") {
-    article {
-      margin: (_size(section-spacing, medium) * 0.5) _size(section-spacing, medium)
-        (_size(section-spacing, medium) * 0.5) 0;
-      width: calc(50% - #{_size(section-spacing, medium) * 0.5});
-    }
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @include breakpoint("<=small") {
+    grid-template-columns: repeat(2, 1fr);
     article {
       @include padding(1.5em, 1.5em);
-      margin: (_size(section-spacing, small) * 0.5) _size(section-spacing, small)
-        (_size(section-spacing, small) * 0.5) 0;
-      width: calc(50% - #{_size(section-spacing, small) * 0.5} - 1px);
 
       .image {
         margin-bottom: 1.5em;
@@ -64,11 +52,6 @@
   }
 
   @include breakpoint("<=xsmall") {
-    display: block;
-
-    article {
-      width: 100%;
-      margin: 0 0 _size(element-margin) 0 !important;
-    }
+    grid-template-columns: 1fr;
   }
 }
