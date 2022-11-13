@@ -68,18 +68,30 @@ collections:
           - label: Subheader
             name: subheader
             widget: string
+            required: false
           - label: Address
             name: address
             widget: markdown
+            required: false
           - label: Telephone
             name: telephone
             widget: string
+            required: false
           - label: Email
             name: email
             widget: string
           - label: Twitter
             name: twitter
             widget: string
+            required: false
+          - label: LinkedIn
+            name: linkedin
+            widget: string
+            required: false
+          - label: Instagram
+            name: instagram
+            widget: string
+            required: false
 
       - name: config-errors
         label: Errors

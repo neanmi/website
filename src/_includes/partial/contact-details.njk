@@ -1,30 +1,40 @@
 <ul class="contact">
-  <li class="icon solid fa-home">
-    {% markdown %}{{ config.contact.address }}{% endmarkdown %}
-  </li>
-  <li class="icon solid fa-phone">
-    <a target="_blank" rel="noopener noreferrer" href="tel:{{ config.contact.telephone }}">
-      {{ config.contact.telephone }}
-    </a>
-  </li>
+  {% if config.contact.address %}
+    <li class="icon solid fa-home">
+      {% markdown %}{{ config.contact.address }}{% endmarkdown %}
+    </li>
+  {% endif %}
+  {% if config.contact.telephone %}
+    <li class="icon solid fa-phone">
+      <a target="_blank" rel="noopener noreferrer" href="tel:{{ config.contact.telephone }}">
+        {{ config.contact.telephone }}
+      </a>
+    </li>
+  {% endif %}
   <li class="icon solid fa-envelope">
     <a target="_blank" rel="noopener noreferrer" href="mailto:{{ config.contact.email }}">
       {{ config.contact.email }}
     </a>
   </li>
-  <li class="icon brands fa-twitter">
-    <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/{{ config.contact.twitter }}">
-      {{ config.contact.twitter }}
-    </a>
-  </li>
-  {# <li class="icon brands fa-facebook-f">
-    <a target="_blank" rel="noopener noreferrer" href="https://facebook.com/{{ config.contact.facebook }}">
-      {{ config.contact.facebook }}
-    </a>
-  </li>
-  <li class="icon brands fa-instagram">
-    <a target="_blank" rel="noopener noreferrer" href="https://instagram.com/{{ config.contact.instagram }}">
-      {{ config.contact.instagram }}
-    </a>
-  </li> #}
+  {% if config.contact.twitter %}
+    <li class="icon brands fa-twitter">
+      <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/{{ config.contact.twitter }}">
+        {{ config.contact.twitter }}
+      </a>
+    </li>
+  {% endif %}
+  {% if config.contact.linkedin %}
+    <li class="icon brands fa-linkedin">
+      <a target="_blank" rel="noopener noreferrer" href="https://linkedin.com/company/{{ config.contact.linkedin }}">
+        {{ config.contact.linkedin }}
+      </a>
+    </li>
+  {% endif %}
+  {% if config.contact.instagram %}
+    <li class="icon brands fa-instagram">
+      <a target="_blank" rel="noopener noreferrer" href="https://instagram.com/{{ config.contact.instagram }}">
+        {{ config.contact.instagram }}
+      </a>
+    </li>
+  {% endif %}
 </ul>
