@@ -3,6 +3,6 @@
     <img src="{{ feature.data.image }}" alt=""/>
   </div>
   <h3 class="major">{{ feature.data.title }}</h3>
-  <p>{{ feature.data.description }}</p>
+  <p>{% markdown %}{{ feature.data.description }}{% endmarkdown %}</p>
   {# <a href="#" class="special">Learn more</a> #}
 </article>
