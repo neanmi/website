@@ -2,8 +2,9 @@
   "header": "Contact us",
   "email": "contact@neanmi.com",
   "success": {
-    "header": "Thank you",
+    "header": "Thank you for contacting us",
     "message": "We will try to get back to you as soon as possible.",
     "button": "Return"
-  }
+  },
+  "subheader": ""
 }
