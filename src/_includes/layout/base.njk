@@ -24,7 +24,9 @@
     <meta property="twitter:description" content="{{ meta.siteDescription }}">
     <meta property="twitter:image" content="{{ meta.siteImage }}">
 
-    <link rel="shortcut icon" href="/uploads/logo-white.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="/uploads/logo-white.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)">
+    <link rel="shortcut icon" href="/uploads/logo.svg" type="image/svg+xml" media="(prefers-color-scheme: light)">
+
     <link rel="stylesheet" href="/assets/css/main{% devEnv '', '.min' %}.css"/>
     <noscript><link rel="stylesheet" href="/assets/css/noscript{% devEnv '', '.min' %}.css"/></noscript>
     <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
