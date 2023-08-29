@@ -1783,10 +1783,10 @@ mime@^3.0.0:
   resolved "https://registry.yarnpkg.com/mime/-/mime-3.0.0.tgz#b374550dca3a0c18443b0c950a6a58f1931cf7a7"
   integrity sha512-jSCU7/VB1loIWBZe14aEYHU/+1UMEHoaO7qxCOVJOw9GgH72VAWppxNcjU+x9a2k3GSIBXNKxXQFqRvvZ7vr3A==
 
-minify@10.4.0:
-  version "10.4.0"
-  resolved "https://registry.yarnpkg.com/minify/-/minify-10.4.0.tgz#3aff43ca729ae9bfd7bf0159f0b160b113292f8a"
-  integrity sha512-gSz5MrzG+6SD5EOfLKzbNUrSB2OYWo0ejxC64AByuzX1alollw6oapWN241pN8kQGxzQ41Cbu5eCdCnKBEUYgQ==
+minify@10.5.1:
+  version "10.5.1"
+  resolved "https://registry.yarnpkg.com/minify/-/minify-10.5.1.tgz#4328049b30b4a09b0917352639709c0004e1cafb"
+  integrity sha512-NcqnFdK2d0a3cGXKh5pGdudqsPKQJN7K9sTfJUge8JrH0v1Z0Je6BPaf3yUyoqDWBqtZmd3pexIYy5czEMvLig==
   dependencies:
     "@putout/minify" "^2.0.0"
     clean-css "^5.0.1"
