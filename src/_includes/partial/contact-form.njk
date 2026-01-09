@@ -3,7 +3,13 @@
 </h2>
 <p>{{ config.contact.subheader }}</p>
 
-<form name="contact" method="post" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" action="/contact/success">
+<script
+  src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+  async
+  defer
+></script>
+
+<form name="contact" method="post" action="/contact/submit">
   <div class="fields">
     <div class="field">
       <label for="name">Name</label>
@@ -18,8 +24,8 @@
       <textarea required name="message" id="message" rows="4"></textarea>
     </div>
     <div class="field">
-      <label for="recaptcha">Verification</label>
-      <div data-netlify-recaptcha="true"></div>
+      <label>Verification</label>
+      <div class="cf-turnstile" data-sitekey="{{ env.TURNSTILE_SITE_KEY }}"></div>
     </div>
   </div>
   <ul class="actions">
