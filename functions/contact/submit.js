@@ -1,3 +1,6 @@
+import { createHash, createHmac } from "node:crypto";
+import { Buffer } from "node:buffer";
+
 //noinspection JSUnusedGlobalSymbols
 /**
  * POST /contact/success
@@ -5,7 +8,7 @@
 export async function onRequestPost(context) {
   /** @type {Request} */
   const request = context.request;
-  /** @type {Record<string, string>} */
+  /** @type {{ CONTACT_FORM_EMAIL_TO: string, CONTACT_FORM_EMAIL_FROM: string, AZ_ECS_HOST: string, AZ_ECS_KEY: string, TURNSTILE_SECRET_KEY: string }} */
   const env = context.env;
 
 
@@ -33,29 +36,44 @@ export async function onRequestPost(context) {
   const processForm = async (body) => {
     const escapeHtml = (raw) => raw.replace(/[\u00A0-\u9999<>&]/g, i => "&#" + i.charCodeAt(0) + ";");
 
-    const res = await fetch("https://api.sendgrid.com/v3/mail/send", {
-      method: "POST", headers: {
-        "content-type": "application/json", "authorization": `Bearer ${env.SENDGRID_API_KEY}`
-      }, body: JSON.stringify({
-        "personalizations": [{
-          "to": [{
-            "email": env.CONTACT_FORM_EMAIL_TO
-          }]
-        }], "from": {
-          "email": env.CONTACT_FORM_EMAIL_FROM
-        }, "subject": "New contact form submission", "content": [{
-          "type": "text/html", "value": `
+    const azEcsHost = env.AZ_ECS_HOST;
+    const azEcsSendMailPath = "/emails:send?api-version=2025-09-01";
+    const timestamp = new Date().toUTCString();
+    const content = JSON.stringify({
+      "senderAddress": env.CONTACT_FORM_EMAIL_FROM,
+      "content": {
+        "subject": "New contact form submission from neanmi.com",
+        "html": `
         <strong>Name:</strong> ${escapeHtml(body.get("name"))}<br/>
         <strong>Email:</strong> ${escapeHtml(body.get("email"))}<br/>
         <strong>Message:</strong> ${escapeHtml(body.get("message"))}<br/>
       `
-        }]
-      })
+      },
+      "recipients": {
+        "to": [
+          {
+            "address": env.CONTACT_FORM_EMAIL_TO
+          }
+        ]
+      }
+    });
+    const contentHash = createHash("sha256").update(content, "utf8").digest("base64");
+    const stringToSign = `POST\n${azEcsSendMailPath}\n${timestamp};${azEcsHost};${contentHash}`;
+    const secret = Buffer.from(env.AZ_ECS_KEY, "base64");
+    const signature = createHmac("sha256", secret).update(stringToSign).digest("base64");
+
+    const res = await fetch(`https://${azEcsHost}${azEcsSendMailPath}`, {
+      method: "POST", headers: {
+        "content-type": "application/json",
+        "authorization": `HMAC-SHA256 SignedHeaders=x-ms-date;host;x-ms-content-sha256&Signature=${signature}`,
+        "x-ms-date": timestamp,
+        "x-ms-content-sha256": contentHash
+      }, body: content
     });
 
     if (!res.ok) {
-      console.log("Sendgrid email not sent: ", res.status, await res.json());
-      throw new Error("Failed to send email.");
+      console.log("Email not sent: ", res.status, await res.json());
+      throw new Error("Failed to submit contact form.");
     }
 
     return new Response("Success", {
@@ -85,7 +103,6 @@ export async function onRequestPost(context) {
       console.error("Turnstile validation error:", error);
       return { success: false, "error-codes": ["internal-error"] };
     }
-
   }
 
   try {
